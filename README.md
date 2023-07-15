@@ -1,6 +1,6 @@
 # Tank Stars
 
-### Welcome to our Tank Stars Game!👩‍🔬
+### Welcome to our Tank Stars Game!
 
 # Introduction
 
@@ -19,14 +19,14 @@ The following showcases glimpse of a clone of the mobile game ‘Tank Stars’, 
 
 ## Main Menu Screen
 
-![MainMeu.png](https://github.com/AhayChowdhry/Tank_Stars_AP_Project/blob/master/MainMeu.png)
+![Initial_Page.png](https://github.com/UtsvGrg/TankStars-GameClone/blob/main/Initial%20Page.png)
 <image>
 
 ## Tank Selection Screen
 
 The Game comprises of 4 tanks, each having one special attack.
 
-![Screenshot 2022-12-22 at 3.17.29 PM.png](https://github.com/AhayChowdhry/Tank_Stars_AP_Project/blob/master/Screenshot%202022-12-22%20at%202.29.55%20PM.png)
+![User_Page.png](https://github.com/UtsvGrg/TankStars-GameClone/blob/main/User_Page.png)
 
 ## Main Game Screen
 
@@ -35,12 +35,6 @@ The Game comprises of 4 tanks, each having one special attack.
 - Each Tank and Snout are separate sprites that have been attached together using their relative positions and the angle of their current slope. This is helpful is aiming the snout for shooting.
 - Each weapon is dynamically loaded using Template Design Pattern, reducing the LOC significantly, OOPs does make stuff easier. 🙈
 - Health of the tank hit is reduced depending upon the distance of the impact of the weapon.
-
-# Win Screen
-
-Every game is incomplete without a win screen, and we made sure ours isn’t.
-
-![Screenshot 2022-12-22 at 3.26.05 PM.png](https://github.com/AhayChowdhry/Tank_Stars_AP_Project/blob/master/Screenshot%202022-12-25%20at%205.27.25%20PM.png)
 
 # Load Game Screen
 
@@ -78,7 +72,7 @@ try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("obj1.txt
 }
 ```
 
-![Screenshot 2022-12-22 at 3.27.11 PM.png](https://github.com/AhayChowdhry/Tank_Stars_AP_Project/blob/master/Screenshot%202022-12-25%20at%205.26.27%20PM.png)
+![Saved_Game.png](https://github.com/UtsvGrg/TankStars-GameClone/blob/main/Saved_Game(Serialization).png)
 
 ## Exception Handling
 
@@ -88,4 +82,4 @@ try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("obj1.txt
 
 The following use case diagram shows the work flow of the game.
 
-![Use Case Diagram - Tank Stars.png](https://s3-us-wet-2.amazonaws.com/secure.notion-static.com/a0ad7b1d-e948-4354-831d-25865cc49264/Use_Case_Diagram_-_Tank_Stars.png)
+![Use Case Diagram - Tank Stars.png](https://github.com/UtsvGrg/TankStars-GameClone/blob/main/UML_Photo.png)
