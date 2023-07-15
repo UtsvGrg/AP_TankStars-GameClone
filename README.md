@@ -1,6 +1,6 @@
 # ⭐ Tank Stars
 
-### Welcome to our Tank Stars Game!
+### Welcome to our Tank Stars Game! 🎯
 
 # Introduction
 
