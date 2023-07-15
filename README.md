@@ -4,7 +4,7 @@
 
 # Introduction
 
-The following showcases glimpse of a clone of the mobile game ‘Tank Stars’, recreated using LibGdx and Box2D Physics Engine, employing important OOPs such as:
+The following showcases glimpse of a clone of the mobile game ‘Tank Stars’, recreated using LibGdx and Scene2D Engine, employing important OOPs such as:
 
 - Inheritance & Interfaces
 - Encapsulation
@@ -24,7 +24,7 @@ The following showcases glimpse of a clone of the mobile game ‘Tank Stars’, 
 
 ## Tank Selection Screen
 
-The Game comprises of 4 tanks, each having one special attack.
+The Game comprises of 3 tanks, each having one special attack.
 
 ![User_Page.png](https://github.com/UtsvGrg/TankStars-GameClone/blob/main/User_Page.png)
 
@@ -32,51 +32,53 @@ The Game comprises of 4 tanks, each having one special attack.
 
 ### Shooting
 
-- Each Tank and Snout are separate sprites that have been attached together using their relative positions and the angle of their current slope. This is helpful is aiming the snout for shooting.
-- Each weapon is dynamically loaded using Template Design Pattern, reducing the LOC significantly, OOPs does make stuff easier. 🙈
+- Each Tank are separate textures that have been attached together using their relative positions, whereas the background and ground have been rendered using sprite.
+- Each stage enables ScreenViewport and thereby allows resizing the entire game.
 - Health of the tank hit is reduced depending upon the distance of the impact of the weapon.
 
 # Load Game Screen
 
 - Games can be saved and loaded from the Load option present in the Main Menu
 - Games are stored using the concept of Serialisation using `ObjectOutputStream`.
-- All game details of an ongoing game are stored in a class called Play.
+- All game details of an ongoing game can be stored on multiple slots, from out1.txt to out3.txt.
 
 ```java
-try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("obj1.txt"))) {
-oos.writeObject(play);
-} catch (IOException e) {
-e.printStackTrace();
-}
+        Button1.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y) {
+                ObjectOutputStream out = null;
+                try {
+                    out = new ObjectOutputStream(new FileOutputStream("out1.txt"));
+                    out.writeObject(game);
+                    out.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                game.setScreen(new MenuScreen(game));
+            }
+        });
 ```
 
-- The class Play is serialised and the next slot index is stored using `BufferedWriter`.
-
-```java
-FileWriter fileWriter = new FileWriter(file);
-BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);                    
-
-bufferedWriter.write(towrite);
-bufferedWriter.flush();
-bufferedWriter.close();
-```
-
+- The class Play is serialised and the next slot index is stored using `FileOutputStream`.
 - Finally, games are Loading using `ObjectInputStream`
 
 ```java
-try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("obj1.txt"))) {
-    Play deserializedObj = (Play) ois.readObject();
-    game.setScreen(new MainGameScreen(game, deserializedObj));
-} catch (IOException | ClassNotFoundException e) {
-    e.printStackTrace();
-}
+        Button2.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y) {
+                ObjectInputStream in = null;
+                try {
+                    in = new ObjectInputStream(new FileInputStream("out2.txt"));
+                    game1 = (TankWars) in.readObject();
+                    in.close();
+                } catch (IOException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
 ```
 
 ![Saved_Game.png](https://github.com/UtsvGrg/TankStars-GameClone/blob/main/Saved_Game(Serialization).png)
 
 ## Exception Handling
 
-- We have handled two exceptions, to ensure that the health of a player does not drop below zero and the terrain is not generated above half of the screen height.
+- We have handled many exceptions, to ensure that the game runs smoothly from IOException to ClassNotFoundException.
 
 ## Use case Diagram
 
