@@ -1,6 +1,6 @@
 # Tank Stars
 
-### Welcome to our Tank Stars Game!👩‍🔬
+### Welcome to our Tank Stars Game!
 
 # Introduction
 
@@ -19,7 +19,7 @@ The following showcases glimpse of a clone of the mobile game ‘Tank Stars’, 
 
 ## Main Menu Screen
 
-![MainMeu.png](https://github.com/AhayChowdhry/Tank_Stars_AP_Project/blob/master/MainMeu.png)
+![MainMeu.png](https://github.com/UtsvGrg/TankStars-GameClone/blob/main/Initial%20Page.png)
 <image>
 
 ## Tank Selection Screen
