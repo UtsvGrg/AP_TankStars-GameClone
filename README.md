@@ -1,4 +1,4 @@
-# Tank Stars
+# ⭐ Tank Stars
 
 ### Welcome to our Tank Stars Game!
 
@@ -15,7 +15,7 @@ The following showcases glimpse of a clone of the mobile game ‘Tank Stars’, 
 - Design Patterns
 - Exception Handling
 
-# Game Play
+# 🎮 Game Play
 
 ## Main Menu Screen
 
